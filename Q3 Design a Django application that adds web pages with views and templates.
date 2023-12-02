@@ -43,6 +43,9 @@ myapp/templates/myapp/about.html:
 </body>
 </html>
 
+#####AFTER CREATING HTML PAJES IN PROJECT FOLDER--->GO TO Settings.py and in that add your appname -->'app',
+
+
 Create URL Mappings
 In your app directory, create a myapp/urls.py file (if it doesn't exist) and define URL patterns for the views:
 from django.urls import path
