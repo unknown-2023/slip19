@@ -1,25 +1,20 @@
 Design a Django application that adds web pages with views and templates.
 
-Create a New Django Project and App
-# Create a new Django project
+Create a New folder in D drive using cmd commands
+cmd commonds -->
 django-admin startproject myproject
-# Create a new Django app
 cd myproject
 python manage.py startapp myapp
 
-Define Views for Each Page
-Inside your app directory (e.g., myapp), open the views.py file.
-Define a view function for each web page you want to create. For example, let's create two pages: "home" and "about":
+Views.py --> it is in myapp
 from django.shortcuts import render
 def home(request):
     return render(request, 'myapp/home.html')
 def about(request):
     return render(request, 'myapp/about.html')
 
-Create Templates
-Create HTML templates for each page in your app's template directory. 
-By default, Django expects templates to be located in myapp/templates/myapp/. Create two HTML files named home.html and about.html inside this directory:
-myapp/templates/myapp/home.html:
+Create Templates --> in myapp create folder templates --> in that folder create myapp folder
+home.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +26,7 @@ myapp/templates/myapp/home.html:
 </body>
 </html>
 
-myapp/templates/myapp/about.html:
+about.html-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,11 +38,12 @@ myapp/templates/myapp/about.html:
 </body>
 </html>
 
-#####AFTER CREATING HTML PAJES IN PROJECT FOLDER--->GO TO Settings.py and in that add your appname -->'app',
-
+AFTER CREATING HTML PAJES IN PROJECT FOLDER--->
+GO TO Settings.py and 
+in that add your appname -->'app' --> in ending
 
 Create URL Mappings
-In your app directory, create a myapp/urls.py file (if it doesn't exist) and define URL patterns for the views:
+create a myapp/urls.py file --> in myapp  --> not exist so create it
 from django.urls import path
 from . import views
 
@@ -57,7 +53,7 @@ urlpatterns = [
 ]
 
 Configure Project URL Routing
-In your project's urls.py file (e.g., myproject/urls.py), include the URL patterns from your app:
+myproject/urls.py --> it is already exixt in myproject 
 from django.contrib import admin
 from django.urls import path, include
 
@@ -66,9 +62,8 @@ urlpatterns = [
     path('', include('myapp.urls')),
 ]
 
-Run the Development Server
 Start the development server with the following command:
-python manage.py runserver
+python manage.py runserver --> in cmd
 Access the Web Pages
 Home Page: http://127.0.0.1:8000/
 About Page: http://127.0.0.1:8000/about/
